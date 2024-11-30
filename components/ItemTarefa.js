@@ -2,19 +2,19 @@ import React from 'react';
 import { View, Text, StyleSheet, Pressable } from 'react-native';
 import Prioridades from './Prioridades';
 
-const ItemTarefa = () => {
+const ItemTarefa = ({ tarefa, aoDeletar, aoEditar }) => {
   return (
     <View style={estilos.itemTarefa}>
       <View style={estilos.infoTarefa}>
-        <Text style={estilos.nomeTarefa}>Nome tarefa</Text>
-        <Text style={estilos.descricaoTarefa}>Descricao Tarefa</Text>
-        <Prioridades/>
+        <Text style={estilos.nomeTarefa}>{tarefa.nome}</Text>
+        <Text style={estilos.descricaoTarefa}>{tarefa.descricao}</Text>
+        <Prioridades prioridade={tarefa.prioridade} />
       </View>
       <View style={estilos.acoes}>
-        <Pressable style={estilos.botaoEditar}>
+        <Pressable onPress={() => aoEditar(tarefa)} style={estilos.botaoEditar}>
           <Text>Editar</Text>
         </Pressable>
-        <Pressable style={estilos.botaoDeletar}>
+        <Pressable onPress={() => aoDeletar(tarefa.id)} style={estilos.botaoDeletar}>
           <Text>Deletar</Text>
         </Pressable>
       </View>
@@ -48,6 +48,9 @@ const estilos = StyleSheet.create({
   },
   botaoEditar: {
     marginRight: 10,
+  },
+  botaoDeletar: {
+    color: 'red',
   },
 });
 
