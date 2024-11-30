@@ -1,20 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View, Text} from 'react-native';
+import Prioridades from './components/Prioridades';
 
 export default function App() {
+
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on yoAAAAAAAAAAAAAAAAAAAAur app!</Text>
-      <StatusBar style="auto" />
+    <View style={estilos.container}>
+    <Text>Ola</Text>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
+const estilos = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: 'white',
+    padding: 20,
   },
 });
