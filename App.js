@@ -1,12 +1,15 @@
-import { StyleSheet, View, Text} from 'react-native';
-import Prioridades from './components/Prioridades';
+import { StyleSheet, View} from 'react-native';
+import ItemTarefa from './components/ItemTarefa';
+import FormularioTarefa from './components/FormularioTarefa';
+
 
 export default function App() {
 
 
   return (
     <View style={estilos.container}>
-    <Text>Ola</Text>
+    <FormularioTarefa/>
+      <ItemTarefa/>
     </View>
   );
 }
@@ -14,7 +17,7 @@ export default function App() {
 const estilos = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#fff',
     padding: 20,
   },
 });
